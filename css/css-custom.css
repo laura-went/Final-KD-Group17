@@ -1,0 +1,50 @@
+.footer-sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.bg-acl {
+  background-color: #826199;
+}
+
+#box {
+  outline-style: solid;
+  outline-width: thin;
+  float: left;
+}
+
+.box1 {
+  padding: 50px;
+}
+
+.a-acl {
+  color: #3c3c3c !important;
+}
+
+.my-card:hover {
+  border-color: #826199;
+}
+
+#results {
+  display: flex;
+}
+
+#map {
+  flex: 1;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+#mapid {
+  flex: 1;
+  position: fixed;
+  height: 50vh;
+  width: 40vw;
+}
+
+#res-list {
+  flex: 1;
+}
