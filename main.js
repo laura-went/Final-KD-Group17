@@ -22,8 +22,8 @@ $(document).ready(function(){
 
 function afterBudget(){
     if ($('#budget').val()){
-       $(".searchlist.budget").hide();
-			 $(".searchlist.type").show();
+       $(".searchlist.budget").fadeOut("slow");
+			 setTimeout(function(){$(".searchlist.type").fadeIn("slow");},600);
      }else{
 			 if(confirm("Select an option")){
 			 };
@@ -32,8 +32,8 @@ function afterBudget(){
 
 function afterType(){
   if ($('#type').val()){
-     $(".searchlist.type").hide();
-		 $(".searchlist.countries").show();
+     $(".searchlist.type").fadeOut("slow");
+		 setTimeout(function(){$(".searchlist.countries").fadeIn("slow");},600);
    }else{
 		 if(confirm("Select an option")){
 		 }
@@ -42,8 +42,8 @@ function afterType(){
 
 function afterCountries(){
   if ($('#countries').val()){
-     $(".searchlist.countries").hide();
-		 $(".searchlist.people").show();
+     $(".searchlist.countries").fadeOut("slow");
+		 setTimeout(function(){$(".searchlist.people").fadeIn("slow");},600);
    }else{
 		 if(confirm("Select an option")){
 		 }
@@ -52,8 +52,8 @@ function afterCountries(){
 
 function afterPeople(){
   if ($('#people').val()){
-     $(".searchlist.people").hide();
-		 $(".searchlist.period").show();
+     $(".searchlist.people").fadeOut("slow");
+		 setTimeout(function(){$(".searchlist.period").fadeIn("slow");},600);
    }else{
 		 if(confirm("Select an option")){
 		 }
@@ -62,8 +62,8 @@ function afterPeople(){
 
 function afterPeriod(){
   if ($('#period').val()){
-     $(".searchlist.period").hide();
-		 $(".searchlist.submitButton").show();
+     $(".searchlist.period").fadeOut("slow");
+		 setTimeout(function(){$(".searchlist.submitButton").fadeIn("slow");},600);
    }else{
 		 if(confirm("Select an option")){
 		 }
@@ -139,7 +139,10 @@ function mainCtrl($scope, $http){
 
 						 	$scope.myDynamicData.push(str);
 
-							document.getElementById("result-list").innerHTML += "<li class='a' id='" + $scope.myDynamicData[$scope.myDynamicData.length-1] + "' >" + $scope.myDynamicData.length + " " + $scope.myDynamicData[$scope.myDynamicData.length-1] + "<div class = 'dynamic'  id='d" + $scope.myDynamicData[$scope.myDynamicData.length-1] + "' ></div> </li>";
+
+
+
+							document.getElementById("result-list").innerHTML += "<li class='a' id='" + $scope.myDynamicData[$scope.myDynamicData.length-1] + "' >"  + $scope.myDynamicData[$scope.myDynamicData.length-1] + "<div class = 'dynamic'  id='d" + $scope.myDynamicData[$scope.myDynamicData.length-1] + "' ></div> </li>";
 							//+ $scope.myDynamicData.length + " ", onclick='doClick(this.value)'
 							$(function() {
 								$(".a").on("click", function() {
@@ -151,8 +154,14 @@ function mainCtrl($scope, $http){
 									function getAbstract(abstract){
 										console.log("abstract: " + abstract);
 										console.log("d"+id);
-										document.getElementById("d"+id).innerHTML = abstract;
-										$("#d"+id).show();
+										if(document.getElementById("d"+id).innerHTML == ""){
+											document.getElementById("d"+id).innerHTML = abstract;
+											$("#d"+id).show();
+										}else{
+											document.getElementById("d"+id).innerHTML = "";
+											$("#d"+id).hide();
+										}
+
 									};
 
 									$scope.myEndpoint2 = "http://dbpedia.org/sparql"

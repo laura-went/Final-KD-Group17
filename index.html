@@ -21,30 +21,29 @@
 
 <body ng-controller="MainCtrl">
 
+  <div class="content">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-acl mb-5">
+      <a class="navbar-brand" href="index.html">
+        <!-- <img src="http://www.few.vu.nl/~wissen/rw_common/images/Griffioen_Boven_Engels.png" height="50" alt="" /> -->
+        Find your vacay
+      </a>
+    </nav>
 
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-acl mb-5">
-    <a class="navbar-brand" href="#">
-      <!-- <img src="http://www.few.vu.nl/~wissen/rw_common/images/Griffioen_Boven_Engels.png" height="50" alt="" /> -->
-      Find your vacay
-    </a>
-  </nav>
 
-
-
-  <div class="search">
-    <h3>Search for the vacation of your dreams:</h3>
-    <div id="searchbar">
-      <form id="form1" ng-submit="searchSubmitted()">
-        <ul class="searchlist">
-          <li class="searchlist">
-            <h3 class="op">Your preferences:</h1>
-          </li>
-          <li class="searchlist budget">
-            <!-- <input list="budget" name="budget" /> -->
-            Budget:
-            <select id="budget" required>
+    <div class="search">
+      <h1 class="text">Search for the vacation of your dreams</h1>
+      <div id="searchbar">
+        <form id="form1" ng-submit="searchSubmitted()">
+          <ul class="searchlist">
+            <li class="searchlist">
+            </li>
+            <li class="searchlist budget">
+              <!-- <input list="budget" name="budget" /> -->
+              <h3>What is your budget?</h3>
+              <select id="budget" required>
               <option disabled="disabled" selected="selected"></option>
               <option value="500">Any</option>
               <option value="100"> &lt;100</option>
@@ -53,16 +52,16 @@
               <option value="400">&lt;400</option>
               <option value="500">&lt;500</option>
             </select>
-            <button type="button" onclick="afterBudget()">Next</button>
-          </li>
+              <button type="button" onclick="afterBudget()">Next</button>
+            </li>
 
 
 
 
-          <li class="searchlist type">
-            <!-- <input list="type" name="type" /> -->
-            Travel type:
-            <select id="type" required>
+            <li class="searchlist type">
+              <!-- <input list="type" name="type" /> -->
+              <h3>What type of vacation do you want?</h3>
+              <select id="type" required>
               <option disabled="disabled" selected="selected"></option>
               <option value="?travelType">Any</option>
               <option value="ex:city">City</option>
@@ -70,114 +69,89 @@
               <option value="ex:hiking">Hiking</option>
               <option value="ex:winter_sports">Winter Sports</option>
             </select>
-            <button type="button" onclick="afterType()">Next</button>
-          </li>
+              <button type="button" onclick="afterType()">Next</button>
+            </li>
 
-          <li class="searchlist countries">
-            <!-- <input list="countries" name="countries" /> -->
-            Countries:
-            <select id="countries" required>
+            <li class="searchlist countries">
+              <!-- <input list="countries" name="countries" /> -->
+              <h3>How close do you want the city to be?</h3>
+              <select id="countries" required>
               <option disabled="disabled" selected="selected"></option>
               <option value="?distance">Any</option>
               <option value="pp:close">Close</option>
               <option value="pp:semi_far">Semi-far</option>
               <option value="pp:far">Far</option>
             </select>
-            <button type="button" onclick="afterCountries()">Next</button>
-          </li>
+              <button type="button" onclick="afterCountries()">Next</button>
+            </li>
 
-          <li class="searchlist people">
-            <!-- <input list="people" name="people" /> -->
-            People:
-            <select id="people" required>
+            <li class="searchlist people">
+              <!-- <input list="people" name="people" /> -->
+              <h3>With whom would you like to travel?</h3>
+              <select id="people" required>
               <option disabled="disabled" selected="selected"></option>
               <option value="?people">Any</option>
               <option value="pp:friends">Friends</option>
               <option value="pp:family_with_kids">With kids</option>
               <option value="pp:family_without_kids">Without kids</option>
             </select>
-            <button type="button" onclick="afterPeople()">Next</button>
-          </li>
+              <button type="button" onclick="afterPeople()">Next</button>
+            </li>
 
-          <li class="searchlist period">
-            <!-- <input list="period" name="period" /> -->
-            Period:
-            <select id="period" required>
+            <li class="searchlist period">
+              <!-- <input list="period" name="period" /> -->
+              <h3>What period of the year would you like to travel?</h3>
+              <select id="period" required>
               <option disabled="disabled" selected="selected"></option>
-              <option value="?period">Allyear</option>
+              <option value="?period">All year</option>
               <option value="pp:summer">Summer</option>
               <option value="pp:winter">Winter</option>
             </select>
-            <button type="button" onclick="afterPeriod()">Next</button>
-          </li>
+              <button type="button" onclick="afterPeriod()">Next</button>
+            </li>
 
-          <li class="searchlist submitButton">
-            <input id="searchSubmit" type="submit" name="submit" value="Submit" />
-          </li>
+            <li class="searchlist submitButton">
+              <input id="searchSubmit" type="submit" name="submit" value="Submit" />
+            </li>
 
-        </ul>
-      </form>
-    </div>
-  </div>
-
-
-  <div id="results" class="results">
-    <div id="map">
-      <div id="mapid"></div>
-    </div>
-    <div id="res-list">
-      <ul id="result-list"></ul>
-    </div>
-  </div>
-  <!-- <div class="results">
-    <h3>The location of our webshop</h3>
-            <div id="map"></div>
-            <script>
-              function initMap() {
-                var uluru = {
-                  lat: 52.333852,
-                  lng: 4.865741
-                };
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 14,
-                  center: uluru
-                });
-                var marker = new google.maps.Marker({
-                  position: uluru,
-                  map: map
-                });
-              }
-            </script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoLJ2Y0lbfSSYZqlBNq_r9mCwmSr1btk0&callback=initMap">
-              < script type = "text/javascript"
-              src = "//maps.googleapis.com/maps/api/js?client=gme-wixcomltd2&amp;callback=initMap&amp;language=en" >
-            </script>
-            </script>
-
-            //https://maps.google.com/maps?ll=52.359191,4.899875&z=15&t=m&hl=nl-NL&gl=US&mapclient=apiv3
-
-
-
-    </div> -->
-    <!-- end resultdiv -->
-
-
-
-    <!-- Footer -->
-    <footer class="footer sticky py-3 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Group 17 - K&D Final project</p>
+          </ul>
+        </form>
       </div>
-    </footer>
+    </div>
 
-    <!-- JavaScript libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/angular.min.js"></script>
 
-    <script src="js/Chart.min.js"></script>
-    <script src="js/angular-chart.min.js"></script>
+    <div id="results" class="results">
+      <h1 class="text">Your personal results</h1>
+      <div id="map">
+        <div id="mapid"></div>
+      </div>
+      <div id="res-list">
+        <ul id="result-list"></ul>
+      </div>
+    </div>
 
-    <script src="main.js"></script>
+
+
+
+
+
+
+  </div>
+  <footer class="footer sticky py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Group 17 - K&D Final project</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript libraries -->
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+
+  <script src="js/Chart.min.js"></script>
+  <script src="js/angular-chart.min.js"></script>
+
+  <script src="main.js"></script>
 
 </body>
 
