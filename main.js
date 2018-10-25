@@ -4,7 +4,12 @@ let mymap;
 $(document).ready(function(){
 		console.log( "ready!" );
     $(".results").hide();
-    $(".search").show();
+		$(".search").show();
+		$(".searchlist.type").hide();
+		$(".searchlist.countries").hide();
+		$(".searchlist.people").hide();
+		$(".searchlist.period").hide();
+		$(".searchlist.submitButton").hide();
 		mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -14,6 +19,56 @@ $(document).ready(function(){
     accessToken: 'pk.eyJ1IjoibGF1cmF3ZW50IiwiYSI6ImNqbm05NDQyeDB3cjMza3BrM3lzMWFmbmoifQ.VZdQ2r0x0jdLp60OnGoSRQ'
 }).addTo(mymap);
 });
+
+function afterBudget(){
+    if ($('#budget').val()){
+       $(".searchlist.budget").hide();
+			 $(".searchlist.type").show();
+     }else{
+			 if(confirm("Select an option")){
+			 };
+		 };
+}
+
+function afterType(){
+  if ($('#type').val()){
+     $(".searchlist.type").hide();
+		 $(".searchlist.countries").show();
+   }else{
+		 if(confirm("Select an option")){
+		 }
+	 }
+}
+
+function afterCountries(){
+  if ($('#countries').val()){
+     $(".searchlist.countries").hide();
+		 $(".searchlist.people").show();
+   }else{
+		 if(confirm("Select an option")){
+		 }
+	 }
+}
+
+function afterPeople(){
+  if ($('#people').val()){
+     $(".searchlist.people").hide();
+		 $(".searchlist.period").show();
+   }else{
+		 if(confirm("Select an option")){
+		 }
+	 }
+}
+
+function afterPeriod(){
+  if ($('#period').val()){
+     $(".searchlist.period").hide();
+		 $(".searchlist.submitButton").show();
+   }else{
+		 if(confirm("Select an option")){
+		 }
+	 }
+}
 
 
 //

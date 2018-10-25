@@ -1,6 +1,31 @@
 body {
+  background-image: url("background.jpg");
+  background-repeat: repeat;
+  color: #2AA299;
+}
+
+.searchlist {
+  list-style-type: none;
+}
+
+option {
+  color: #DE3A79;
+}
+
+nav {
   font-family: 'Pacifico';
-  font-size: 22px;
+  font-size: 2em !important;
+  padding: .5em 1em .5em 1em;
+  font-weight: 300;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: #D4F7F4;
+}
+
+.navbar-brand:visited {
+  color: #D4F7F4;
 }
 
 .footer-sticky {
@@ -11,7 +36,7 @@ body {
 }
 
 .bg-acl {
-  background-color: #826199;
+  background-color: #71DAD2;
 }
 
 #box {
@@ -25,15 +50,32 @@ body {
 }
 
 .a-acl {
-  color: #3c3c3c !important;
+  color: #D4F7F4 !important;
 }
 
 .my-card:hover {
   border-color: #826199;
 }
 
+.search {
+  border-style: solid;
+  background-color: white;
+  margin: 2em;
+  border: solid #D4F7F4;
+  padding: 3em;
+  text-align: center;
+}
+
 #results {
   display: flex;
+  border-style: solid;
+  background-color: white;
+  margin: 2em;
+  border: solid #D4F7F4;
+  padding: 3em;
+  text-align: center;
+  color: #DE3A79;
+  list-style-type: none;
 }
 
 #map {
