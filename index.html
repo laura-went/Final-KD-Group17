@@ -5,10 +5,10 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>~17~</title>
+  <meta name="description" content="Find Your Vacay - Project K&D Group 17">
+  <meta name="author" content="Laura Went">
+  <link rel="shortcut icon" href="background.jpg" type="image/jpg">
+  <title>~FYV~</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
   <!-- <link href="./css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="./css/css-custom.css" rel="stylesheet">
@@ -27,14 +27,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-acl mb-5">
       <a class="navbar-brand" href="index.html">
         <!-- <img src="http://www.few.vu.nl/~wissen/rw_common/images/Griffioen_Boven_Engels.png" height="50" alt="" /> -->
-        Find your vacay
+        ~ FindYourVacay ~
       </a>
     </nav>
 
 
 
     <div class="search">
-      <h1 class="text">Search for the vacation of your dreams</h1>
+      <h1 class="text">Find the vacation of your dreams</h1>
       <div id="searchbar">
         <form id="form1" ng-submit="searchSubmitted()">
           <ul class="searchlist">
@@ -46,11 +46,11 @@
               <select id="budget" required>
               <option disabled="disabled" selected="selected"></option>
               <option value="500">Any</option>
-              <option value="100"> &lt;100</option>
-              <option value="200">&lt;200</option>
-              <option value="300">&lt;300</option>
-              <option value="400">&lt;400</option>
-              <option value="500">&lt;500</option>
+              <option value="100"> &lt; €100</option>
+              <option value="200">&lt; €200</option>
+              <option value="300">&lt; €300</option>
+              <option value="400">&lt; €400</option>
+              <option value="500">&lt; €500</option>
             </select>
               <button type="button" onclick="afterBudget()">Next</button>
             </li>
@@ -121,11 +121,12 @@
 
 
     <div id="results" class="results">
-      <h1 class="text">Your personal results</h1>
+
       <div id="map">
         <div id="mapid"></div>
       </div>
       <div id="res-list">
+        <h1 class="text">Your personal results</h1>
         <ul id="result-list"></ul>
       </div>
     </div>

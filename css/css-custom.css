@@ -3,6 +3,7 @@ body {
   background-repeat: repeat;
   color: #2AA299;
   margin-bottom: 0px !important;
+  font-family: "arial black";
 }
 
 .searchlist {
@@ -14,7 +15,13 @@ option {
 }
 
 .text {
+  font-size: 2.5em;
   font-family: 'Pacifico';
+}
+
+h3 {
+  color: #DE3A79;
+  font-size: 2em;
 }
 
 nav {
@@ -23,6 +30,7 @@ nav {
   padding: .5em 1em .5em 1em;
   font-weight: 300;
   text-align: center;
+  background-image: linear-gradient(to right, #71DAD2, #D4F7F4);
 }
 
 .navbar-brand {
@@ -57,6 +65,21 @@ button {
   font-size: 1em;
 }
 
+input[type=submit] {
+  background-color: #FFE184;
+  border: none;
+  color: white;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+input[type=submit]:hover {
+  background-color: #FFD861;
+  cursor: pointer;
+}
+
 button:hover {
   background-color: #FFD861;
   cursor: pointer;
@@ -67,13 +90,9 @@ footer {
   right: 0;
   bottom: 0;
   height: 70px;
-  background-color: #71DAD2;
+  background-image: linear-gradient(to right, #71DAD2, #D4F7F4);
   color: white;
   padding: .5em;
-}
-
-.bg-acl {
-  background-color: #71DAD2;
 }
 
 #box {
@@ -86,13 +105,20 @@ footer {
   padding: 50px;
 }
 
+.a {
+  text-transform: uppercase;
+}
+
 .a:hover {
   cursor: pointer;
+  color: #F27DAA;
 }
 
 select {
   color: #DE3A79;
   font-weight: 200;
+  width: 10em;
+  height: 2.5em;
 }
 
 .a-acl {
@@ -106,10 +132,12 @@ select {
 .search {
   border-style: solid;
   background-color: white;
-  margin: 2em;
-  border: solid #D4F7F4;
-  padding: 3em;
+  margin: auto;
+  margin-top: 5vh;
+  border: solid #FFD861;
+  padding: 3em 5em;
   text-align: center;
+  width: 50%;
 }
 
 #results {
@@ -117,10 +145,18 @@ select {
   border-style: solid;
   background-color: white;
   margin: 2em;
-  border: solid #D4F7F4;
+  border: solid #FFD861;
   padding: 3em;
   text-align: center;
   color: #DE3A79;
+}
+
+.dynamic {
+  text-align: left;
+  font-weight: normal;
+  color: #DE3A79;
+  text-transform: none;
+  font-family: "arial";
 }
 
 #map {
@@ -142,5 +178,5 @@ select {
 }
 
 #result-list {
-  type="1";
+  list-style: none;
 }
