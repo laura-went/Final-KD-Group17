@@ -92,7 +92,7 @@ function mainCtrl($scope, $http){
 			let period = document.getElementById("period").value;
 			console.log(budget);
 
-			$scope.myEndpoint = "http://localhost:5820/final/query?query="
+			$scope.myEndpoint = "http://localhost:5820/Group17Final/query?query="
 			let finalQuery = "SELECT DISTINCT ?city WHERE {  ?city ex:hasBudgetRange ?budget      FILTER (?budget < " + budget + ") .   " + period + " owl:equivalentClass ?a.   ?a owl:someValuesFrom ?b.    " + type + " rdf:type ?b.  ?city ex:hasTravelType " + type + ".  ?city ex:inCountry ?country.  ?country rdf:type " + countries + ".   ?city rdf:type ?n.  ?n owl:someValuesFrom " + people + ".}"
 			console.log(finalQuery);
 			$scope.myFinalQuery = encodeURI(finalQuery).replace(/#/g, '%23');
